@@ -10,4 +10,10 @@ public class Caterpillar extends Arthropods implements Walker, Metamorphoser<But
 		return new Butterfly();
 	}
 
+	@Override
+	public String walk() {
+		String walk = "Caterpillar is crawling";
+		System.out.println(walk);
+		return walk;
+	}
 }

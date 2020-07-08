@@ -17,16 +17,6 @@ public class Parrot extends Bird implements Sounder, Flyer, Walker {
 	}
 
 	@Override
-	public void walk() {
-		// TODO Auto-generated method stub
-	}
-
-	@Override
-	public void fly() {
-		// TODO Auto-generated method stub
-	}
-
-	@Override
 	public String makeSound() {
 		String sound = null;
 		try {

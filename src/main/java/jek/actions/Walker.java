@@ -1,9 +1,9 @@
 package jek.actions;
 
-import jek.animals.ResourceLoader;
-
 public interface Walker {
-	default void walk() {
-		System.out.println(String.format(ResourceLoader.get("walk"), this.getClass().getSimpleName()));
+	default String walk() {
+		String walk = this.getClass().getSimpleName() + " is walking";
+		System.out.println(walk);
+		return walk;
 	}
 }
