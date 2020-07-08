@@ -29,7 +29,6 @@ public class JAnimalsTest {
 	// A - 1
 	@Test
 	public void testSing() {
-		System.out.println("Bird Sing Test");
 		Bird bird = new Bird();
 		assertEquals("Bird is singing", bird.sing());
 	}
@@ -37,8 +36,6 @@ public class JAnimalsTest {
 	// A - 2 & 3
 	@Test
 	public void testChickenDuck() {
-		System.out.println("Chicken/Duck Test");
-
 		Chicken chicken = new Chicken(Gender.FEMALE);
 		assertEquals("Cluck, cluck", chicken.makeSound());
 		chicken = new Chicken(Gender.MALE);
