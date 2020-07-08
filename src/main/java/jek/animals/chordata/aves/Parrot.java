@@ -6,13 +6,13 @@ import jek.actions.Walker;
 
 public class Parrot extends Bird implements Sounder, Flyer, Walker {
 
-	private Class<?> soundModel;
+	private Sounder soundModel;
 
 	public Parrot() {
-		
+
 	}
 
-	public Parrot(Class<?> soundModel) {
+	public Parrot(Sounder soundModel) {
 		this.soundModel = soundModel;
 	}
 
@@ -27,25 +27,19 @@ public class Parrot extends Bird implements Sounder, Flyer, Walker {
 	}
 
 	@Override
-	public void makeSound() {
+	public String makeSound() {
+		String sound = null;
 		try {
 			// Assuming all other types of animals make same sounds
 			if (soundModel == null) {
 				System.out.println("<This parrot did not hear and make any sound>");
-				return;
+				return null;
 			}
-			Object object = soundModel.newInstance();
-			if (object instanceof Sounder) {
-				Sounder sounder = (Sounder) object;
-				sounder.makeSound();
-			} else {
-				System.out.println("<This parrot did not hear and make any sound>");
-			}
-		} catch (InstantiationException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
+			return soundModel.makeSound();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return sound;
 	}
 
 }

@@ -22,7 +22,7 @@ public class Solution {
 
 		// Here can set the language to be used
 		// see resource files
-		ResourceLoader.loadResourceBundle(Locale.FRENCH);
+		ResourceLoader.loadResourceBundle(Locale.ENGLISH);
 		new Butterfly().fly();
 
 		Animal[] animalList = new Animal[] { new Bird(), new Duck(), new Dolphin(), new Dog(), new Cat(), new Parrot(),
@@ -35,8 +35,8 @@ public class Solution {
 		System.out.println("Can swim: " + getSwimmerCount(animalList));
 
 		// parrot is able to store a model class/animal which will determine the sound itself makes
-		System.out.print("The parrot says ");
-		new Parrot(Dog.class).makeSound();
+		System.out.print("The parrot lives near a dog and says ");
+		new Parrot(new Dog()).makeSound();
 		System.out.print("The parrot says ");
 		new Parrot().makeSound();
 

@@ -1,19 +1,29 @@
 package jek.animals.chordata.aves;
 
 import jek.actions.Sounder;
-import jek.actions.Walker;
+import jek.animals.ResourceLoader;
+import jek.enums.Gender;
 
-public class Chicken extends Bird implements Sounder, Walker {
+public class Chicken extends Bird implements Sounder {
 
-	@Override
-	public void walk() {
-		// TODO Auto-generated method stub
-		
+	public Chicken() {
+
+	}
+
+	public Chicken(Gender gender) {
+		this.gender = gender;
 	}
 
 	@Override
-	public void makeSound() {
-		// TODO Auto-generated method stub
+	public String makeSound() {
+		String sound;
+		if (gender != null && Gender.MALE.equals(gender)) {
+			sound = ResourceLoader.get("makesound.Chicken.m");
+		} else {
+			sound = ResourceLoader.get("makesound.Chicken.f");
+		}
+		System.out.println(sound);
+		return sound;
 	}
 
 }

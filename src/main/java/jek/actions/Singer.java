@@ -1,7 +1,9 @@
 package jek.actions;
 
 public interface Singer {
-	default void sing() {
-		System.out.println(this.getClass().getSimpleName() + " is singing");
+	default String sing() {
+		String song = this.getClass().getSimpleName() + " is singing";
+		System.out.println(song);
+		return song;
 	}
 }

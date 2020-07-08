@@ -1,10 +1,12 @@
 package jek.animals;
 
+import jek.enums.Gender;
+
 public abstract class Animal {
 
-	private String sizeClass;
-	private String colorScheme;
-	private String gender;
+	protected String sizeClass;
+	protected String colorScheme;
+	protected Gender gender;
 
 	public String getSizeClass() {
 		return sizeClass;
@@ -22,11 +24,11 @@ public abstract class Animal {
 		this.colorScheme = colorScheme;
 	}
 
-	public String getGender() {
+	public Gender getGender() {
 		return gender;
 	}
 
-	public void setGender(String gender) {
+	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
 }

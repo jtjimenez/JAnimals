@@ -1,7 +1,9 @@
 package jek.actions;
 
 public interface Swimmer {
-	default void swim() {
-		System.out.println(this.getClass().getSimpleName() + " is swimming");
+	default String swim() {
+		String swim = this.getClass().getSimpleName() + " is swimming";
+		System.out.println(swim);
+		return swim;
 	}
 }
